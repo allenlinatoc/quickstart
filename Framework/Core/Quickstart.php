@@ -46,13 +46,21 @@ class Quickstart
 
 //        var_dump($config->json("customExceptionHandler"));
 
-        $this->_loadRoutes();
+        $this
+                ->loadRoutes()
+                ->initStorage();
 
         self::$instance = $this;
     }
 
 
-    protected function _loadRoutes()
+    public function initStorage()
+    {
+        SystemTools::FixStoragePath();
+    }
+
+
+    protected function loadRoutes()
     {
         $routepath = MY_ETC_PATH . "/routes.bsv";
 
@@ -64,12 +72,13 @@ class Quickstart
         $loader = new FileLoader($routepath, true);
         $loader->read();
         $loader->getSha1();
+        return $this;
     }
 
 
     public function start()
     {
-        
+
     }
 
     public function getRootpath()
