@@ -1,0 +1,12 @@
+Underscore PHP
+Medoo
+Laravel's Blade (Templating engine)
+Minify
+PHP ActiveRecord
+phpFastCache
+PHRoute (Routing library, by Joe Green)
+Respect's Validation
+REQUESTS (Simplified cURL library, by Ryan McCue)
+Simpletest (PHP unit testing library)
+Zend's JSON
+Gaufrette (Filesystem library, by KNPLabs)

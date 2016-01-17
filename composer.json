@@ -1,0 +1,27 @@
+{
+    "name": "allenlinatoc/quickstart",
+    "description": "An agile and HMVC-based PHP framework",
+    "require": {
+        "phpfastcache/phpfastcache": "^3.0",
+        "phroute/phroute": "^2.1",
+        "philo/laravel-blade": "3.*",
+        "php-activerecord/php-activerecord": "^1.1",
+        "catfan/medoo": "^1.0",
+        "anahkiasen/underscore-php": "^2.0",
+        "zendframework/zend-json": "^2.6",
+        "mrclay/minify": "^2.2",
+        "rmccue/requests": "^1.6",
+        "respect/validation": "^1.0",
+        "knplabs/gaufrette": "^0.2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Allen Linatoc",
+            "email": "linatoc.allen@programmer.net"
+        }
+    ],
+    "require-dev": {
+        "simpletest/simpletest": "^1.1"
+    }
+}
