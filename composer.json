@@ -12,7 +12,8 @@
         "mrclay/minify": "^2.2",
         "rmccue/requests": "^1.6",
         "respect/validation": "^1.0",
-        "knplabs/gaufrette": "^0.2.0"
+        "knplabs/gaufrette": "^0.2.0",
+        "mustangostang/spyc": "^0.5.1"
     },
     "license": "MIT",
     "authors": [
