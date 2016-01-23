@@ -1,0 +1,12 @@
+## YAML Template.
+---
+GET:
+    /: IndexController@home
+    /home: IndexController@home
+    /login: IndexController@login
+
+POST:
+    /user:
+        /authenticate: UserController@authenticate
+        /register: UserController@register
+        /logout: UserController@logout

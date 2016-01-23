@@ -26,7 +26,7 @@
 
 namespace Quickstart\Tests;
 
-use View;
+use ViewManager;
 use System;
 
 /**
@@ -40,21 +40,6 @@ class ViewTest extends \QuickTestCase
     public function __construct()
     {
         parent::__construct();
-    }
-
-
-    public function testResolvePath_SystemView()
-    {
-        $path = '$/exception';
-        $result = View::ResolvePath($path);
-        $expect = \System::FrameworkViewsPath('/exception.blade.php');
-        $this->assertEqualStrict($result, $expect);
-    }
-
-
-    public function testResolvePath_AppView()
-    {
-
     }
 
 }

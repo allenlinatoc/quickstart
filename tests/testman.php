@@ -41,7 +41,9 @@ $defaults = [
 
 ob_start();
 
+
 // Initialize configuration
+
 $fileConfig = realpath(__DIR__ . "/config.json");
 
 $config = $defaults;
@@ -70,14 +72,17 @@ if ($config['DebugMode'])
 }
 
 
+
 // Load and Run all test files
 
 $recursiveIterator = new RecursiveDirectoryIterator(__DIR__, RecursiveDirectoryIterator::SKIP_DOTS);
 $it = new RecursiveIteratorIterator($recursiveIterator);
 $regexIterator = new RegexIterator($it, '/Test\.php$/');
+
 foreach ($regexIterator as $key => $value)
 {
-    // We only get classes which names end with "Test", e.g. MyUtilityTest, etc.
+    // By default, we only get classes which names end with "Test", e.g. MyUtilityTest, etc.
+
     $classname = preg_replace(sprintf('/(.+)(\/|\\\\)(%s)\.(.+)$/i', $config['TestClassRegex']), '$3', (string)$value);
     if ($classname == $value)
     {
@@ -85,13 +90,20 @@ foreach ($regexIterator as $key => $value)
     }
     require_once (string)$value;
 
+
     // Extract namespace
+
     $classfile_contents = file_get_contents((string)$value);
     $namespace = preg_replace('/([\S\s]+)[^\/\*]namespace(.+)[\n\s\t]*(\{|\;)([\S\s]+)/i', '$2', $classfile_contents);
+
+
     // Properly sanitize
+
     $namespace = $namespace == $classfile_contents ? "" : sprintf('\\%s', ltrim(trim($namespace), '\\'));
 
-    // Instantiate
+
+    // Instantiate current report
+
     $class = sprintf('%s\\%s', $namespace, ltrim(trim($classname), '/\\'));
     $instance = new $class();
     if ($instance instanceof SimpleTestCase)

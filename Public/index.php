@@ -7,9 +7,15 @@ mb_internal_encoding("UTF-8");
 
 // Path separator definition
 
+/**
+ * Filesystem path separator for current file system
+ */
 define("SEP", !in_array(preg_match("/^WIN/i", PHP_OS), [ false, 0 ]) ? "\\" : "/");
 
-require_once __DIR__ . "/../Framework/autoload.php";
+
+// Load autoloader
+
+require_once __DIR__ . "/../00000/autoload.php";
 
 
 // Set exception handler
